@@ -41,8 +41,6 @@ const SignIn: React.FC = () => {
   const navigation = useNavigation();
   const { signIn, user } = useAuth();
 
-  console.log(user);
-
   const handleSignIn = useCallback(
     async (data: SignInFormData) => {
       try {
@@ -65,6 +63,7 @@ const SignIn: React.FC = () => {
           formRef.current?.setErrors(errors);
           return;
         }
+
         Alert.alert(
           'Erro na autenticação',
           'Ocorreu um erro ao fazer login, cheque as credenciais',
